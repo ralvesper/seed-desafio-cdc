@@ -1,0 +1,33 @@
+
+
+POST localhost:8080/autores
+Content-Type: application/json
+
+{
+"nome": "Rodrigo Pereira",
+"email": "rodrigo.desenv@gmail.com",
+"descricao": "Author description"
+}
+
+###
+
+POST localhost:8080/autores
+Content-Type: application/json
+
+{
+  "nome": "",
+  "email": "",
+  "descricao": ""
+}
+
+###
+
+POST localhost:8080/categorias
+Content-Type: application/json
+
+{
+  "nome": "Java"
+}
+
+
+
