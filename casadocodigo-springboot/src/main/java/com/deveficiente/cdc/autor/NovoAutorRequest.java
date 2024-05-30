@@ -6,13 +6,16 @@ import jakarta.validation.constraints.Size;
 
 public class NovoAutorRequest {
 
-	@NotBlank
+	@NotBlank(message = "{beanvalidation.campo.vazio}")
 	private String nome;
-	@NotBlank
-	@Email
+
+	@NotBlank(message = "{beanvalidation.campo.vazio}")
+	@Email(message = "{beanvalidation.email.invalido}")
 	private String email;
-	@NotBlank
-	@Size(max = 400)
+
+	@NotBlank(message = "{beanvalidation.campo.vazio}")
+
+	@Size(max = 400, message = "{beanvalidation.tamanho.maximo}")
 	private String descricao;
 
 	public NovoAutorRequest(@NotBlank String nome,

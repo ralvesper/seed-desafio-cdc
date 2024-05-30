@@ -1,5 +1,4 @@
-
-
+### Autor válido
 POST localhost:8080/autores
 Content-Type: application/json
 
@@ -9,25 +8,29 @@ Content-Type: application/json
 "descricao": "Author description"
 }
 
-###
+### Email vazio
 
 POST localhost:8080/autores
 Content-Type: application/json
 
 {
-  "nome": "",
+  "nome": "Rodrigo Pereira",
   "email": "",
-  "descricao": ""
+  "descricao": "Author description"
 }
 
-###
+### Email inválido
 
-POST localhost:8080/categorias
+POST localhost:8080/autores
 Content-Type: application/json
 
 {
-  "nome": "Java"
+  "nome": "Rodrigo Pereira",
+  "email": "rodrigo.desenv",
+  "descricao": "Author description"
 }
+
+
 
 
 
