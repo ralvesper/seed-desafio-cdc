@@ -1,0 +1,33 @@
+POST http://localhost:8080/livros
+Content-Type: application/json
+
+{
+  "livro": {
+    "titulo": "Aprendendo Spring Boot",
+    "resumo": "Este livro cobre todos os conceitos fundamentais de Spring Boot.",
+    "sumario": "1. Introdução\n2. Configuração\n3. Desenvolvimento de APIs\n4. Segurança\n5. Testes\n6. Deploy",
+    "preco": 49.99,
+    "numeroDePaginas": 300,
+    "isbn": "978-3-16-148410-0",
+    "dataPublicacao": "2024-12-01",
+    "idCategoria": 2,
+    "idAutor": 1
+  }
+}
+###
+POST http://localhost:8080/livros
+Content-Type: application/json
+
+{
+  "livro": {
+      "titulo": "",
+      "resumo": "",
+      "sumario": "",
+      "preco": 0,
+      "numeroDePaginas": 10,
+      "isbn": "",
+      "dataPublicacao": "",
+      "idCategoria": 99,
+      "idAutor": 99
+  }
+}
