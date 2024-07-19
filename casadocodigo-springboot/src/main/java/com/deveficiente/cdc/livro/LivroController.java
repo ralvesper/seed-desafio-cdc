@@ -7,12 +7,14 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 public class LivroController {
@@ -40,4 +42,17 @@ public class LivroController {
 
         return ResponseEntity.created(location).body(request.getLivro());
     }
+
+    @GetMapping("/livros")
+    public ResponseEntity<LivrosResponse> obtertodos() {
+        List<NovoLivroDTO> livros = manager.createQuery("select l from Livro l", Livro.class)
+                .getResultList()
+                .stream()
+                .map(livro -> new NovoLivroDTO().fromModel(livro))
+                .toList();
+
+        return ResponseEntity.ok(LivrosResponse.builder().livros(livros).build());
+
+    }
+
 }

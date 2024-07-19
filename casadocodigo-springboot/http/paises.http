@@ -1,0 +1,7 @@
+## Criar novo pais
+POST http://localhost:8080/paises
+Content-Type: application/json
+
+{
+    "nome": "Brasil"
+}

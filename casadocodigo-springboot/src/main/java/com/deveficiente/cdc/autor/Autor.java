@@ -49,4 +49,7 @@ public class Autor {
 		return descricao;
 	}
 
+	public Long getId() {
+		return id;
+	}
 }

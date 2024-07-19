@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.function.Function;
 
 @Data
@@ -46,8 +47,13 @@ public class NovoLivroDTO {
     @ExistsId(domainClass = Autor.class, fieldName = "id")
     private Long idAutor;
 
+
     public Livro toModel(Function<Long, Categoria> categoriaFinder, Function<Long, Autor> autorFinder) {
         return new Livro(null, this.titulo, this.resumo, this.sumario, this.preco, this.numeroDePaginas, this.isbn, this.dataPublicacao,
                 autorFinder.apply(this.idAutor), categoriaFinder.apply(this.idCategoria));
+    }
+
+    public NovoLivroDTO fromModel(Livro livro) {
+        return new NovoLivroDTO(livro.getId(), livro.getTitulo(), livro.getResumo(), livro.getSumario(), livro.getPreco(), livro.getNumeroDePaginas(), livro.getIsbn(), livro.getDataPublicacao(), livro.getCategoria().getId(), livro.getAutor().getId());
     }
 }

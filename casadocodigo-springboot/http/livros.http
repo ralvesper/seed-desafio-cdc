@@ -14,7 +14,10 @@ Content-Type: application/json
     "idAutor": 1
   }
 }
+
 ###
+GET localhost:8080/livros
+
 POST http://localhost:8080/livros
 Content-Type: application/json
 
@@ -31,3 +34,7 @@ Content-Type: application/json
       "idAutor": 99
   }
 }
+
+###
+GET http://localhost:8080/livros/6
+
