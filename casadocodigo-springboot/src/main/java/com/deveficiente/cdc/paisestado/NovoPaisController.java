@@ -1,4 +1,4 @@
-package com.deveficiente.cdc.pais;
+package com.deveficiente.cdc.paisestado;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

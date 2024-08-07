@@ -1,6 +1,5 @@
-package com.deveficiente.cdc.pais;
+package com.deveficiente.cdc.paisestado;
 
-import com.deveficiente.cdc.categoria.Categoria;
 import com.deveficiente.cdc.util.UniqueValue;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;

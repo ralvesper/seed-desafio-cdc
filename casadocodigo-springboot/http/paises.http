@@ -1,4 +1,4 @@
-## Criar novo pais
+## Criar novo paisestado
 POST http://localhost:8080/paises
 Content-Type: application/json
 
