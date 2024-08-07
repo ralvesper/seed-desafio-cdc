@@ -3,12 +3,8 @@ GET localhost:8080/paises
 ###
 GET localhost:8080/estados
 
-
-###
-
 ###
 GET http://localhost:8080/paises/1
-
 
 ###
 POST localhost:8080/paises
