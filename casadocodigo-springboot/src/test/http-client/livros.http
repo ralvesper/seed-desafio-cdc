@@ -1,0 +1,18 @@
+## Novo Livro
+POST http://localhost:8080/livros
+Content-Type: application/json
+
+{
+  "livro": {
+    "titulo": "Design Patterns in Java",
+    "resumo": "Design Patterns in Java is a book that teaches you how to implement design patterns in Java.",
+    "sumario": "This book covers the following design patterns: Singleton, Factory, Abstract Factory, Builder, etc.",
+    "preco": 100.00,
+    "numeroDePaginas": 200,
+    "isbn": "978-3-16-148410-1",
+    "dataPublicacao": "2024-12-01",
+    "idCategoria": 1,
+    "idAutor": 1
+  }
+}
+

@@ -1,0 +1,30 @@
+POST localhost:8080/compras
+Content-Type: application/json
+
+{
+    "email": "rodrigo.desenv@gmailcom",
+    "nome": "Rodrigo",
+    "sobrenome": "Alves Pereira",
+    "documento": "03127158629",
+    "endereco": "Rua Walter Braguetta, 19",
+    "complemento": "Casa",
+    "cidade": "Sao Jose do Rio Pardo",
+    "idPais": 1,
+    "idEstado": 1,
+    "telefone": "11-960624868",
+    "cep": "13720000",
+    "pedido": {
+      "total": 200.00,
+      "itens": [
+        {
+          "idLivro": 1,
+          "quantidade": 1
+        },
+        {
+          "idLivro": 2,
+          "quantidade": 1
+        }
+      ]
+    }
+
+}
