@@ -7,7 +7,7 @@ Content-Type: application/json
     "titulo": "Design Patterns in Java",
     "resumo": "Design Patterns in Java is a book that teaches you how to implement design patterns in Java.",
     "sumario": "This book covers the following design patterns: Singleton, Factory, Abstract Factory, Builder, etc.",
-    "preco": 100.00,
+    "preco": 150.00,
     "numeroDePaginas": 200,
     "isbn": "978-3-16-148410-1",
     "dataPublicacao": "2024-12-01",
@@ -15,4 +15,25 @@ Content-Type: application/json
     "idAutor": 1
   }
 }
+
+### Livro
+POST http://localhost:8080/livros
+Content-Type: application/json
+
+{
+  "livro": {
+    "titulo": "Alice no País das Maravilhas",
+    "resumo": "Alice no País das Maravilhas é uma obra clássica de Lewis Carroll, que narra as aventuras de Alice em um mundo mágico cheio de personagens fantásticos e situações surreais.",
+    "sumario": "Escrito por Lewis Carroll e publicado originalmente em 1865, o livro acompanha a jovem Alice em sua jornada pelo País das Maravilhas, explorando temas de lógica, imaginação e nonsense, que encantam leitores de todas as idades.",
+    "preco": 59.90,
+    "numeroDePaginas": 208,
+    "isbn": "978-0-141-14463-8",
+    "dataPublicacao": "2024-12-24",
+    "idCategoria": 2,
+    "idAutor": 2
+  }
+}
+
+
+
 

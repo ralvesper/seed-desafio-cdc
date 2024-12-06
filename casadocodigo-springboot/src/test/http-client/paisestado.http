@@ -19,7 +19,7 @@ POST localhost:8080/estados
 Content-Type: application/json
 
 {
-    "nome": "Minas Gerais",
+    "nome": "Sao Paulo",
     "idPais": 1
 }
 

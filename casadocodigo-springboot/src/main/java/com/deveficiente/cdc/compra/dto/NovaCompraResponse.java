@@ -1,4 +1,4 @@
-package com.deveficiente.cdc.fechamentocompra;
+package com.deveficiente.cdc.compra.dto;
 
 import lombok.Builder;
 import lombok.Data;
@@ -7,5 +7,5 @@ import lombok.Data;
 @Builder
 public class NovaCompraResponse {
     private String mensagem;
-    private Object data;
+    private DadosCompraResponse data;
 }

@@ -1,6 +1,8 @@
-package com.deveficiente.cdc.fechamentocompra.model;
+package com.deveficiente.cdc.compra.model;
 
 
+import com.deveficiente.cdc.cupons.Cupom;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Positive;
@@ -27,8 +29,18 @@ public class Pedido {
     @Positive
     private BigDecimal total;
 
+    @Transient
+    private BigDecimal valorFinal;
+
     @JsonManagedReference
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
     private List<ItemPedido> itens = new ArrayList<>();
 
+    public void aplicaCupom(Cupom cupom) {
+        this.valorFinal = cupom.aplicaDesconto(total);
+    }
+
+    public BigDecimal getValorFinal() {
+        return valorFinal == null ? total : valorFinal;
+    }
 }

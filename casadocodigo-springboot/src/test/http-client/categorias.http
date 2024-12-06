@@ -2,7 +2,7 @@ POST localhost:8080/categorias
 Content-Type: application/json
 
 {
-  "nome": "Java"
+  "nome": "Literatura Estrangeira"
 }
 
 ###

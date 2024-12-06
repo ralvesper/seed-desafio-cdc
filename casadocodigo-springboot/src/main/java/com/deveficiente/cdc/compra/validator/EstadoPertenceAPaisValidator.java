@@ -1,5 +1,6 @@
-package com.deveficiente.cdc.fechamentocompra;
+package com.deveficiente.cdc.compra.validator;
 
+import com.deveficiente.cdc.compra.dto.NovaCompraRequest;
 import com.deveficiente.cdc.paisestado.Estado;
 import com.deveficiente.cdc.paisestado.Pais;
 import jakarta.persistence.EntityManager;

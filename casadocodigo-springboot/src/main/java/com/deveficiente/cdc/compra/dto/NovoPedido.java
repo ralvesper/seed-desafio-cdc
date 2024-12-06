@@ -1,8 +1,7 @@
-package com.deveficiente.cdc.fechamentocompra;
+package com.deveficiente.cdc.compra.dto;
 
-import com.deveficiente.cdc.fechamentocompra.model.Pedido;
+import com.deveficiente.cdc.compra.model.Pedido;
 import com.deveficiente.cdc.livro.Livro;
-import com.deveficiente.cdc.util.ExistsId;
 import jakarta.persistence.EntityManager;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;

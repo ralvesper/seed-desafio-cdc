@@ -1,4 +1,4 @@
-### Autor v�lido
+### Autor v�lido
 POST localhost:8080/autores
 Content-Type: application/json
 
@@ -14,12 +14,12 @@ POST localhost:8080/autores
 Content-Type: application/json
 
 {
-  "nome": "Rodrigo Pereira",
-  "email": "",
-  "descricao": "Author description"
+  "nome": "Lewis Carroll",
+  "email": "lewiscarrol@penguinpopularclassics.com",
+  "descricao": "Lewis Carroll (1832–1898), pseudônimo de Charles Lutwidge Dodgson, foi um escritor, matemático, fotógrafo e lógico inglês, mundialmente conhecido por sua obra \"Alice no País das Maravilhas\" e sua continuação, \"Alice Através do Espelho\". Suas histórias exploram fantasia, lógica e nonsense, influenciando gerações de leitores."
 }
 
-### Email inv�lido
+### Email inv�lido
 
 POST localhost:8080/autores
 Content-Type: application/json

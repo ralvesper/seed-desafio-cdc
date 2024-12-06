@@ -1,12 +1,9 @@
-package com.deveficiente.cdc.fechamentocompra;
+package com.deveficiente.cdc.compra.dto;
 
-import com.deveficiente.cdc.fechamentocompra.model.ItemPedido;
-import com.deveficiente.cdc.fechamentocompra.model.Pedido;
+import com.deveficiente.cdc.compra.model.ItemPedido;
 import com.deveficiente.cdc.livro.Livro;
 import com.deveficiente.cdc.util.ExistsId;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;

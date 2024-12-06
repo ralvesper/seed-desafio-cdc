@@ -1,4 +1,4 @@
-package com.deveficiente.cdc.fechamentocompra.model;
+package com.deveficiente.cdc.compra.model;
 
 import com.deveficiente.cdc.livro.Livro;
 import com.fasterxml.jackson.annotation.JsonBackReference;

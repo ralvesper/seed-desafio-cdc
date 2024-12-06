@@ -1,8 +1,10 @@
-package com.deveficiente.cdc.fechamentocompra;
+package com.deveficiente.cdc.compra.dto;
 
 
-import com.deveficiente.cdc.fechamentocompra.model.Compra;
-import com.deveficiente.cdc.fechamentocompra.model.Pedido;
+import com.deveficiente.cdc.cupons.Cupom;
+import com.deveficiente.cdc.cupons.CupomRepository;
+import com.deveficiente.cdc.compra.model.Compra;
+import com.deveficiente.cdc.compra.model.Pedido;
 import com.deveficiente.cdc.paisestado.Estado;
 import com.deveficiente.cdc.paisestado.Pais;
 import com.deveficiente.cdc.util.ExistsId;
@@ -16,6 +18,9 @@ import lombok.NoArgsConstructor;
 import org.hibernate.validator.internal.constraintvalidators.hv.br.CNPJValidator;
 import org.hibernate.validator.internal.constraintvalidators.hv.br.CPFValidator;
 import org.springframework.util.Assert;
+
+import java.time.LocalDateTime;
+import java.util.Optional;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -32,7 +37,7 @@ public class NovaCompraRequest {
     private String documento;
     @NotBlank
     private String endereco;
-    @NotBlank
+
     private String complemento;
     @NotBlank
     private String cidade;
@@ -51,6 +56,8 @@ public class NovaCompraRequest {
     @NotNull
     private NovoPedido pedido;
 
+    private String codigoCupom;
+
     public boolean documentoValido() {
         Assert.hasLength(documento, "você não deveria validar o documento se ele não tiver sido preenchido");
 
@@ -65,7 +72,7 @@ public class NovaCompraRequest {
 
     }
 
-    public Compra toModel(EntityManager manager) {
+    public Compra toModel(EntityManager manager, CupomRepository cupomRepository) {
 
         @NotNull Pais pais = manager.find(Pais.class, idPais);
 
@@ -77,7 +84,7 @@ public class NovaCompraRequest {
 
         Pedido pedido = this.pedido.toModel(manager);
 
-        return Compra.builder()
+        Compra compra = Compra.builder()
                 .email(email)
                 .nome(nome)
                 .sobrenome(sobrenome)
@@ -90,6 +97,22 @@ public class NovaCompraRequest {
                 .telefone(telefone)
                 .cep(cep)
                 .pedido(pedido)
+                .dataCompra(LocalDateTime.now())
                 .build();
+
+        if(codigoCupom != null) {
+            Optional<Cupom> cupom = cupomRepository.findByCodigo(codigoCupom);
+            if (cupom.isEmpty()) {
+                throw new IllegalArgumentException("Cupom não encontrado");
+            }
+
+            if (!cupom.get().valido()) {
+                throw new IllegalArgumentException("Cupom expirado");
+            }
+
+            cupom.ifPresent(compra::aplicaCupom);
+        }
+
+        return compra;
     }
 }
