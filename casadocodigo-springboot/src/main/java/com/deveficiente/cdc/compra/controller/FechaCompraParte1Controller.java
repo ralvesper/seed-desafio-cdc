@@ -56,7 +56,6 @@ public class FechaCompraParte1Controller {
 
         manager.persist(novaCompra);
 
-
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(novaCompra.getId())

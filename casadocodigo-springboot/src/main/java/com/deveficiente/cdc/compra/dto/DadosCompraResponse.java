@@ -31,6 +31,11 @@ public class DadosCompraResponse {
     private CupomAplicado cupomAplicado;
 
     public static DadosCompraResponse of(Compra compra) {
+
+        if (compra.getCupomAplicado() != null) {
+            compra.getPedido().aplicaCupom(compra.getCupomAplicado().getCupom());
+        }
+
         return DadosCompraResponse.builder()
                 .id(compra.getId())
                 .email(compra.getEmail())
